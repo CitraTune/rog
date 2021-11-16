@@ -1,0 +1,50 @@
+var count = ["1", "2", "3", "4", "5"];
+var sinput;
+sinput = document.querySelector("#scolor"); 
+var elevens = ["#cell11", "#cell22", "#cell33","#cell44","#cell55","#cell66","#cell77","#cell88","#cell99","#cell110","#cell121"];
+var middle;  
+var left;
+
+var grid = document.createElement("div");
+document.body.appendChild(grid);
+grid.style.display = "grid";
+grid.style.gridTemplateColumns = "auto auto auto auto auto auto auto auto auto auto auto";
+grid.style.height = "440px";
+grid.style.width = "440px";
+grid.style.backgroundColor = "gray";
+
+function getRandomIntInclusive(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
+}
+
+
+
+
+for(var i = 1; i < 122; i++){
+ var newDiv = document.createElement("div");
+ grid.appendChild(newDiv);
+ //grid.appendChild(newDiv);
+ newDiv.setAttribute('id', 'cell'+i);
+ newDiv.innerText = "cell_"+i;
+ var redrgb = getRandomIntInclusive(50,150);
+ var randomizedrgb = "rgb("+redrgb+","+69+","+19+")";
+ newDiv.style.backgroundColor = randomizedrgb;
+ newDiv.style.width = "40px";
+ newDiv.style.fontFamily = "monospace";
+ newDiv.style.fontSize = "8px";
+}
+
+  middle = document.querySelector("#cell61");
+  middle.style.backgroundColor = "rgb(136,8,8)";
+  left = document.querySelectorAll("#cell11, #cell22, #cell33, #cell44, #cell55, #cell66, #cell77, #cell88, #cell99, #cell110, #cell121");
+  left.forEach(cell => cell.style.backgroundColor = "red")
+
+
+  
+
+      
+
+    
+
